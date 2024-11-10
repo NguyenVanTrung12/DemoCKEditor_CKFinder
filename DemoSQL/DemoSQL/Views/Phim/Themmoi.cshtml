@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DemoSQL.Models.Phim;  
+<?xml version="1.0" encoding="utf-8"?>
+<form action="Luu" method="post" >
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Mã phim</label>
+        <input type="text" class="form-control" name="Maphim" asp-for="Maphim">
+    </div>
+    @* <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Tên phim</label>
+        <input type="text" class="form-control" name="Tenphim" asp-for="Tenphim"/>
+    </div> *@
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Nội dung</label>
+        <textarea class="form-control" name="Tenphim" id="ipND" asp-for="Tenphim"></textarea>
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Ngày phát hành</label>
+        <input type="text" class="form-control" name="NgayPh" asp-for="NgayPh">
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Số lượng đĩa</label>
+        <input type="text" class="form-control" name="Sldia"asp-for="Sldia">
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Đơn giá</label>
+        <input type="text" class="form-control" name="Dongia" asp-for="Dongia">
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu lại</button>
+    <a class=" btn btn-primary" asp-area="" asp-controller="Phim" asp-action="Index">Trở lại</a>
+</form>
+
+
+@section Scripts {
+    <script>
+        // CKEDITOR.replace('ipND')
+        // CKEDITOR.replace('ipND', {
+        //     filebrowserUploadUrl: '/File/UploadFile',  // Cập nhật URL cho đúng với controller và phương thức của bạn
+        //     filebrowserUploadMethod: 'form'
+        // });
+
+        // CKEDITOR.replace("ipND", {
+        //     filebrowserImageBrowseUrl: "Scripts/ckfinder/ckfinder.html",
+        //     filebrowserImageUploadUrl: "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images"
+        // });
+        // CKEDITOR.replace("ipND", {
+        //     filebrowserBrowseUrl: "/ckfinder/ckfinder.html",
+        //     filebrowserImageBrowseUrl: "/ckfinder/ckfinder.html?type=Images",
+        //     filebrowserUploadUrl: "/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Files",
+        //     filebrowserImageUploadUrl: "/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images"
+        // });
+        $(document).ready(function () {
+    // Khởi tạo CKEditor cho textarea với ID 'ipND'
+    if ($('#ipND').length) {
+        CKEDITOR.replace('ipND');
+    }
+
+    // Cập nhật nội dung từ CKEditor vào textarea trước khi submit form
+    $('form').on('submit', function () {
+        if (CKEDITOR.instances.ipND) {
+            CKEDITOR.instances.ipND.updateElement();
+        }
+    });
+});
+
+
+    </script>
+}

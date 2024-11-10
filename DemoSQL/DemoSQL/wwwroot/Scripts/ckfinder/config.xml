@@ -1,0 +1,8 @@
+<Connector resourceType="Images">
+	<Error number="0"/>
+	<ConnectorInfo enabled="true" imgWidth="1600" imgHeight="1200" s="" c="" thumbsEnabled="true" uploadCheckImages="false" thumbsUrl="/Assets/_ckthumbs/" thumbsWidth="100" thumbsHeight="100" thumbsDirectAccess="false"/>
+	<Resource Types="">
+		<ResourceType name="Images" url="/Assets/" maxSize="0" allowedExtensions="bmp,gif,jpeg,jpg,png" deniedExtensions="" hash="be4f06df98eb7cc3" hasChildren="true" acl="255"/>
+		</ResourceTypes>
+		<PluginsInfo/>
+	</Connector>
